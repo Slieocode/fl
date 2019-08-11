@@ -1,0 +1,36 @@
+// Wavy Animation Mixins
+// see if we can shorten the code below
+// (might make github repo on this)
+
+@mixin waveInitial($wh, $wp){
+	width:100%;
+	height:$wh;
+	position:absolute;
+	z-index:3;
+	bottom:0%;
+	left:0;
+	background-image:url($wp);
+    @content;
+}
+
+@mixin wavyAnimation($waveHeight, $wavePath){
+
+	@include waveInitial($waveHeight, $wavePath);
+    		 animation:animate-wave 5s linear infinite;
+
+	&:before{
+		@include waveInitial($waveHeight, $wavePath){
+			content:'';
+			opacity:0.4;
+		    animation:animate-wave-reverse 10s linear infinite;
+		};
+	};
+
+	&:after{
+		@include waveInitial($waveHeight, $wavePath){
+			content:'';
+			opacity:0.4;
+		    animation:animate-wave-reverse 25s linear infinite;
+		};
+	};
+};

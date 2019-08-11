@@ -1,0 +1,61 @@
+.analytics{
+	position: relative;
+	.overlay{
+	    background: rgba(2,2,2,0.8);
+	    width:100%;
+	    position: absolute;
+	    top:0;
+	    z-index: 1;
+	    height:100%;
+	}
+
+	.curved {
+	  position: absolute;
+	  bottom: 0;
+	  z-index: 9;
+	  
+	  path {
+	    fill: #fff;
+	  }
+	}
+	.main-batch{
+		display: flex;
+		flex-direction: column;
+		padding-top:50px;
+		text-align: center;
+		padding-left:30px;
+		padding-right:30px;
+		h1{
+			color:#FFF;
+			line-height: 1.9;
+			font-size:50px;
+			flex-basis: 70%;
+		}
+		p{
+			flex-basis: 40%;
+			color:#FFF;
+			margin-top: 60px;
+			// margin-left:10%;
+			line-height:1.9;
+			font-size:22px;
+			span{
+				// color:$subcolor;
+				font-weight: bold;
+			}
+			.underline:before{
+				z-index: 9 !important;
+				// background:$light-accent !important;
+			}
+		}
+	}
+	
+
+	background:url('../img/mockups/purple.jpg') no-repeat center center fixed;
+	background-size: cover;
+	background-blend-mode: multiply;
+	position:relative;
+	height:900px;
+}
+
+
+

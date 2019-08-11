@@ -1,0 +1,131 @@
+// overlay certain div
+
+@mixin overlay{
+	position:absolute;
+	transition:.5s;
+	top:0;
+	left:0;
+	height:100%;
+	width:100%;
+}
+
+  // .wave{
+  //    @include wavyAnimation(75px, '../img/header/#{$waves}');
+  //   }; 
+  
+// prefixer 
+
+@mixin prefixer($prop, $value, $prefixes: ()){
+	@each $prefix in $prefixes{
+		#{'-'+ $prefix + '-' + $prop}:$value;
+	}
+	#{$prop}:$value;
+}
+
+// keyframe animation prefixer
+
+@mixin keyFrame($animationName){
+	@-webkit-keyframes #{$animationName}{
+		@content;
+	}
+	@-moz-keyframes #{$animationName}{
+		@content;
+	}
+	@keyframes #{$animationName}{
+		@content;
+	}
+}
+
+
+// Wavy Animation Mixins
+// see if we can shorten the code below
+// (might make github repo on this)
+
+@keyframes animate-wave{
+	0%{
+		background-position:0;
+	}
+
+	100%{
+		background-position:1360px;
+	}
+}
+
+@keyframes animate-wave-reverse{
+	0%{
+		background-position:1360px;
+	}
+
+	100%{
+		background-position:0;
+	}
+}
+
+@mixin waveInitial($wh, $wp){
+	width:100%;
+	height:$wh;
+	position:absolute;
+	z-index:3;
+	bottom:20%;
+	left:0;
+	background-image:url($wp);
+    @content;
+}
+
+
+@mixin wavyAnimation($waveHeight, $wavePath){
+
+	@include waveInitial($waveHeight, $wavePath);
+    		 animation:animate-wave 40s linear infinite;
+
+	&:before{
+		@include waveInitial($waveHeight, $wavePath){
+			content:'';
+			opacity:0.4;
+		    animation:animate-wave-reverse 20s linear infinite;
+		};
+	};
+
+	&:after{
+		@include waveInitial($waveHeight, $wavePath){
+			content:'';
+			opacity:0.4;
+		    animation:animate-wave-reverse 30s linear infinite;
+		};
+	};
+};
+
+// side shapes
+
+@mixin sideShape($left, $right){
+      position: absolute;
+      left: $left;
+      right: $right;
+      top: -10%;
+      height: 1000px;
+      width: 1000px;
+      background: #EAF0FB;
+      border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+      will-change: border-radius, transform, opacity;
+      animation: morph 5s linear infinite;
+      z-index: -1;	
+}
+
+@keyframes morph{
+ 0%,100%{
+ border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+   transform: translate3d(0,0,0) rotateZ(0.01deg);
+ }
+ 34%{
+     border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+   transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+ }
+ 50%{
+   opacity: .89;
+   transform: translate3d(0,0,0) rotateZ(0.01deg);
+ }
+ 67%{
+   border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+   transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+ }
+}

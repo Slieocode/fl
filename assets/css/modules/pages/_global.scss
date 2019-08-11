@@ -1,0 +1,228 @@
+p{
+  margin: 0 0 20px 0;
+  color: #232323;
+}
+
+em{
+  font-style: italic;
+}
+
+strong{
+  font-weight: bold;
+}
+
+hr{
+  border: solid #ddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 10px 0 30px;
+  height: 0;
+}
+
+
+
+/* Links
+  ------------------------------------  */
+// a
+//   color: $accent
+//   text-decoration: none
+//   outline: 0
+
+// a:hover, a:focus
+//   color: lighten($accent, 20%)
+
+
+ 
+/* Selection colors (easy to forget)
+  ------------------------------------  */
+
+// ::selection
+//   background: $selectionColor
+
+// ::-moz-selection
+//   background: $selectionColor
+
+// img::selection
+//   background: transparent
+
+// img::-moz-selection
+//   background: transparent
+
+// body
+//   -webkit-tap-highlight-color: $selectionColor
+
+
+
+/* Basic Styles
+  ------------------------------------  */
+.container{
+  max-width: 1200px;
+  margin: 20px auto;
+  // padding-left: 15px;
+  // padding-right: 15px;
+  position:relative;
+}
+
+*,*:before,*:after{
+  box-sizing: border-box;
+}
+
+body{
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: 'lato-Regular', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+
+// reseting lists
+
+ul, ol{ 
+  padding: 0;
+  margin: 0;  
+}
+
+ul{
+  list-style: none;
+}
+
+.main-row{
+  padding-top: 100px;
+}
+
+.row{
+    margin-top: 100px;
+}
+// svg
+//   height: 0
+//   width: 0
+
+// shapes 
+.side-shape-right{
+   @include sideShape(none, -32%);
+}
+
+.side-shape-left{
+   @include sideShape(-52%, -30%);
+}
+
+section {
+  margin-top: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 100px;
+}
+
+// Typogrophy 
+.italic{
+  font-family: lato-italic;
+}
+.hairline {
+  font-family: lato-hairline;  
+}
+.bold{
+  font-family: lato-bold;
+}
+.light{
+  font-family: lato-light;
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.lowercase{
+  text-transform: lowercase; 
+}
+
+// coloring
+.link-color-switch{
+  color: #000 !important;
+  &:hover{
+    color:#FFF !important;
+  }
+  &:before{
+    background: $light-accent !important;
+    color:#FFF !important;
+  }
+}
+
+
+
+.upper-title{
+  text-transform: uppercase;
+  color: $subcolor;
+  margin: 50px 0 15px 0;
+  font-family: lato-bold;
+  font-size: 16px;
+}
+
+// blue underline
+.underline{
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 70%;
+      transform: translateY(209%);
+      height: 12%;
+      width: 100%;
+      background: linear-gradient(to right, #229CF4 0%, #229CF4 100%);
+      background-repeat: no-repeat;
+      opacity: 1;
+      transition: all 0.3s ease-in-out;          
+    }
+}
+
+// sub-color-word
+.word-color{
+  color:$subcolor;
+}
+// h3 style
+\:root{
+    --color-highlight: #cc208e;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+}
+
+.gooed{
+    color: #FFF;
+    font-size: 2rem;
+    line-height: 1.35;
+    display: inline;
+    box-decoration-break: clone;
+    background: $accent;
+    padding: 0.5rem 1rem;
+    margin: 30px 0 30px;
+    filter: url('#gooed');
+} 
+
+.analytics h3 .gooed, .slider h3 .gooed, footer h3 .gooed {
+      background:#FFF;
+      color:#333;
+   }
+
+
+.gooed:focus{
+    outline: 0;
+} 
+
+
+.edit{
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--color-bg2);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: var(--color-highlight);
+    border-radius: 1em !important;
+}
+
+// h3 style
+
+fieldset{
+  padding: 0;
+  margin: 0;
+  border: none;
+}

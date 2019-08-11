@@ -1,0 +1,53 @@
+// .main-button{ 
+//     @include prefixer(transition, .3s, webkit moz o ms);
+//     border:1px solid transparent;
+//     border-radius:5px;
+//     background-color:$mainColor;
+//     padding:10px;
+//     margin-top:20px;
+//     cursor: pointer;
+//     outline:none;
+//     font-weight:bold;
+//     color:#FFF;
+//     &:hover{
+//         background-color:#FFF;
+//         color:$mainColor;
+//     }
+// }
+// Headers Button
+.button {
+    font-size:15px;
+    min-width: 150px;
+    display: block;
+    outline: none;
+    padding: .6em 1em;
+    border: none;
+    background: #FFF;
+    color:#000;
+    border-radius:50px;
+    z-index: 1;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
+    transition:.3s;
+    border:1px solid $accent;
+ }
+
+.button--tamaya {
+    overflow: hidden;
+    color: #FFF;
+    min-width: 180px;
+    position:relative;
+     span{
+        color:#000;
+    }
+    &:hover span{
+        color:#FFF;
+    }
+    &:hover{
+        background:$accent;
+    }
+
+}
+.button--tamaya.button--inverted {
+    color: #37474f;
+    border-color: #37474f;
+}

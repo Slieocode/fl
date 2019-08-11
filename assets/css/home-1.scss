@@ -1,0 +1,24 @@
+@import 'modules/helpers/vars';
+@import 'modules/helpers/mixins';
+// @import 'modules/layouts/grid';
+// @import 'modules/helpers/functions';
+@import 'modules/components/buttons';
+@import 'modules/components/headings';
+
+// page structure
+@import 'modules/tools/fonts';
+@import 'modules/tools/icon-font';
+@import 'modules/tools/flaticon.css';
+@import 'modules/tools/normalize';
+@import 'modules/pages/global';
+@import 'modules/layouts/header';
+@import 'modules/layouts/features';
+@import 'modules/layouts/pricing';
+@import 'modules/layouts/bundles';
+@import 'modules/layouts/slider';
+@import 'modules/layouts/mobile';
+@import 'modules/layouts/timeline';
+@import 'modules/layouts/analytics';
+@import 'modules/layouts/blogs';
+@import 'modules/layouts/footer';
+@import 'modules/layouts/responsive';

@@ -1,0 +1,51 @@
+// Media Query Breakpoints
+$maxMedia:"(max-width:576px)";
+$minSmall:"(min-width:768px)";
+$maxSmall:"(max-width:768px)";
+$minMedium:"(min-width:992px)";
+$maxMedium:"(max-width:992px)";
+$maxLarge:"(max-width:1280px)"; //down
+$minLarge:"(min-width:1280px)"; //up
+$minExtraLarge:"(min-width:1300px)"; //up
+
+// menu
+$toggle-size: 60px;
+$toggle-line-size: $toggle-size/8;
+$toggle-line-angle: 405deg;
+$toggle-anim-speed: 0.9s;
+$border-color: #e0e0e0;
+$darker-subcolor: #2b26c3;
+$orange: #DA4D1D;
+$shdow-gray: #d3d3d5;
+
+
+$animation: bounceOut;
+
+// # Header Images
+
+$logo: "logo.svg";
+$bgImage: "bg.jpg";
+$waves: "waves6.png";
+$avatar: "travitar.jpg";
+
+// # Colors
+
+$accent:#8B1DD5;
+$light-accent:#b362ea;
+$subcolor:#229CF4;
+$textColor: #5C5C5C;
+$headlineColor: #333;
+$bgcolor: #e5eaee;
+$documentBackgroundColor: linear-gradient(to bottom, #CC208E 0%, #6713d2 100%);
+$primary-color: #667eea;
+$secondary-color: #764ba2;
+
+
+// menu
+$toggle-line-color: $accent;
+$toggle-line-focus-color: $accent;
+
+
+// footer
+$footer-spacer-height: 20vw;
+$footer-section4-bg-color: #FFF;

@@ -1,0 +1,121 @@
+// // slider section:
+// .slider{
+// 	text-align: center;
+// 	blockquote{
+// 		font:{
+// 			size:20px;
+// 			family:verdana;
+// 			weight:500;
+// 			style:italic;
+// 		}
+// 		line-height:2;
+// 		width:80%;
+// 		margin:30px auto;
+// 		text-align:center;
+// 	}
+// 	img{
+// 		max-width:100%;
+// 	}
+// 	ul li{
+// 		width:20px;
+// 		height:20px;
+// 		margin-top:10px;
+// 		border-radius:50%;
+// 		background-color:#DDD;
+// 		display:inline-block;
+// 		transition:.2s ease all;
+// 		cursor: pointer;
+// 		&.active, 
+// 		&:hover{
+// 			border:2px solid #000;
+// 		}
+// 	}
+// }
+// // services section:
+// .services{
+// 	.service-box{
+// 		float:left;
+// 		width:(100% / 3);
+// 		font-size:18px;
+// 		span{
+// 			color:#777
+// 		}
+
+// 		i{
+// 			margin-right:10px;
+// 			font-size:25px;;
+// 			color:#272727;
+// 		}
+// 		a{
+// 			color:$mainColor;
+// 			text-decoration:none;
+// 		}
+// 		line-height:1.5;
+// 		padding:10px;
+	
+// 		@media #{$maxMedium}{
+// 			float:none;
+// 			width:100%;
+// 			text-align: center;
+// 			margin-bottom:30px;
+// 		}
+// 	}
+// }
+// // team section:
+// .team{
+// 	.team-box{
+// 		float:left;
+// 		width:(100% / 5);
+// 		font-size:18px;
+// 		span{
+// 			color:#777
+// 		}
+// 		a{
+// 			color:$mainColor;
+// 			text-decoration:none;
+// 		}	
+// 		line-height:1.5;
+// 		padding:10px;
+	
+// 		@media #{$maxMedium}{
+// 			width:(90% / 2);
+// 			text-align:center;
+// 			margin-left:5%;
+// 			&:nth-child(6){
+// 				width:100%;
+// 				margin-top:50px;
+// 			}
+// 		}
+// 		@media #{$maxSmall2}{
+// 			float:none;
+// 			width:100%;
+// 			margin-bottom:30px;
+// 			text-align:center;
+// 		}
+// 	}
+// }
+
+// .lorem{
+// 	margin:50px;
+// 	.lorem-box{
+// 		float:left;
+// 		width:(94% / 3);
+// 		&:not(:last-of-type){
+// 			margin-right:3%;
+// 		}
+// 		@media #{$maxSmall2}{
+// 			width:100%;
+// 			float:none;
+// 			text-align:center;
+// 			margin-top:10px;
+// 		}
+// 		img{
+// 			max-width:100%;
+// 			cursor:pointer;
+// 			transition:.2s;
+// 			&:hover{
+// 				opacity:.7;
+// 			}
+// 		}
+// 	}
+// }

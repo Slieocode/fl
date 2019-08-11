@@ -1,0 +1,18 @@
+@import 'modules/helpers/vars';
+@import 'modules/helpers/mixins';
+// @import 'modules/helpers/functions';
+// @import 'modules/components/buttons';
+// @import 'modules/layouts/grid';
+@import 'modules/components/headings';
+// page structure
+@import 'modules/tools/normalize';
+@import 'modules/tools/fonts';
+@import 'modules/tools/icon-font';
+@import 'modules/tools/flaticon';
+@import 'modules/pages/global';
+@import 'modules/layouts/home-2/header';
+@import 'modules/layouts/features';
+@import 'modules/layouts/slider';
+@import 'modules/layouts/mobile';
+@import 'modules/layouts/timeline';
+@import 'modules/layouts/analytics';

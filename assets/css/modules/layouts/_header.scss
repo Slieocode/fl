@@ -1,0 +1,264 @@
+/*************
+ Header Starts
+*************/
+header{
+  position: relative;
+  z-index: 999;
+  width:100%;
+  height:100vh;       
+  display: flex;
+  flex-flow: column;
+  background:url('../img/header/bg/city-large.png');
+  background-size:100% 100%;
+  .header-content{
+    display:flex;
+    flex-flow: row;
+    width:100%;
+    .text-content{
+      margin-top:50vh;
+      margin-left:30px;
+      flex-basis: 30% !important;
+      .sub-title{
+        display:block;
+        font-family: lato-hairline;
+        letter-spacing: 2px;
+        margin-bottom:5px;
+      }
+      p{
+        font-size:1.1rem;
+        color:#777;
+        letter-spacing: 1.2px;
+      }
+    }
+    .shapes{
+      position:absolute;
+      top:0;
+      z-index: -1;
+      bottom:0;
+      left:0;
+      right:0;   
+      .shape-2{
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform:scale(.5);
+        display:none;
+      }      
+      .shape-3{
+        position: absolute;
+        top: 25%;
+        left: 57%;
+      }
+      .shape-4{
+        position: absolute;
+        top: 35%;
+        left: 7%;
+      }
+      .shape-5{
+        position: absolute;
+        top: 85%;
+        left: 27%;
+      }
+      .shape-6{
+        position: absolute;
+        top: 12%;
+        left: 27%;
+        width:400px;
+      }
+      .shape-7{
+        position: absolute;
+        top: 90%;
+        left: 55%; 
+        width:200px;
+      }
+    }
+  }
+} 
+
+  //  Menu button style
+.navigation-menu{
+  display: none;
+  width:100%;
+  background:#FFF;
+  box-shadow: 0 15px 15px -15px rgba(0, 0, 0, 0.5);
+  position:fixed;
+  .logo{
+    width:70px;
+    height:70px;
+    float:right;
+    img{
+      width:100%;
+      height:100%;
+    }
+  }
+}
+
+.btn-toggle {
+  float:left;  
+  transform: scale(.6) !important;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  padding: 12px;
+  background-color: transparent;
+  border-color: transparent;
+  outline: none;
+  transform: translateZ(0);
+  transition: transform 0.1s ease-out;
+  
+  &:active { transform: translateY(4px); }
+  
+  &:focus .line:after { 
+    background-color: $toggle-line-focus-color;
+  }
+}
+
+.line {
+  width: $toggle-size;
+  padding: $toggle-line-size/2;
+  
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: $toggle-line-size;
+    background-color: $toggle-line-color;
+    border-radius: 2px;
+    transform: translateZ(0) rotate(0);
+    transition: background-color 0.2s ease-out;
+  }
+    
+  .open & {
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        animation: jump-#{$i} $toggle-anim-speed forwards ease;
+        &:after {
+          animation: line-#{$i} $toggle-anim-speed forwards ease-in-out;
+        }
+      }
+    }
+  }
+  
+  .close & {
+    @for $i from 1 through 2 {
+      &:nth-child(#{$i}) {
+        animation: jump-#{$i} $toggle-anim-speed reverse ease;
+        &:after {
+          animation: line-#{$i} $toggle-anim-speed reverse ease-in-out;
+        }
+      }
+    }
+  }
+
+  .open &,
+  .close & {
+    &:nth-child(3) {
+      animation: jump-3 $toggle-anim-speed forwards ease-out;
+    }
+  }
+}
+
+@keyframes line-1 {
+  10% { transform: translateZ(0) rotate(0) }
+  80% { transform: translateZ(0) rotate($toggle-line-angle - 10) }
+  90%, 100% { transform: translateZ(0) rotate($toggle-line-angle) }
+}
+
+@keyframes line-2 {
+  10% { transform: translateZ(0) rotate(0) }
+  20% { transform: translateZ(0) rotate(10deg) }
+  90%, 100% { transform: translateZ(0) rotate(-$toggle-line-angle) }
+}
+
+@keyframes jump-1 {
+  10% { transform: translateY(0) }
+  50% { transform: translateY(-$toggle-line-size * 12) }
+  90%, 100% { transform: translateY(-$toggle-line-size * 1) }
+}
+
+@keyframes jump-2 {
+  10% { transform: translateY(0) }
+  50% { transform: translateY(-$toggle-line-size * 10) }
+  85%, 100% { transform: translateY(-$toggle-line-size * 3) }
+}
+
+@keyframes jump-3 {
+  10% { transform: translateY(-$toggle-line-size*1) rotate(15deg) }
+  30% { transform: translateY(-$toggle-line-size*4) rotate(-10deg) }
+  50% { transform: translateY($toggle-line-size) rotate(5deg) }
+  80% { transform: translateY(0) }
+}
+
+@keyframes glow {
+  50% {
+    box-shadow: rgba(lighten($toggle-line-color, 10%), 0.4) 0 0 2px 2px;
+  }
+}
+
+.ul-nav{
+  display:flex;
+  justify-content: center;
+  margin:0;
+  padding: 20px !important;
+  z-index: 999999;
+  transition: 1s;
+  letter-spacing: 2px;
+  text-align: center;
+  li{
+    -webkit-transition:0.5s;
+    -o-transition:0.5s;
+    transition:0.5s;
+      a{
+        display: block;
+        position:relative;
+        text-decoration:none;
+        padding:5px;
+        font-size:14px;
+        width:100%;
+        padding: 0 20px;
+        font-family: lato-regular;
+        color:#FFF;
+        text-transform:uppercase;
+        transition:0.5s;
+        &:hover{
+            transform:scale(1.2);
+            opacity:1;
+            text-decoration:none;
+            color:#000;                    
+        }
+        &:before{
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:#FFF;
+            -webkit-transition:0.5s;
+            -o-transition:0.5s;
+            transition:0.5s;
+            transform:scaleX(0);
+            transform-origin:right;
+            z-index:-1;
+        }
+        &:hover:before{
+            transition:transform 0.5s;
+            transform:scaleX(1);
+            transform-origin:left;
+        }
+    }
+}
+   
+.sub-ul-container{
+  margin:0 auto;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  }
+}
+
+/*************
+ Header Ends
+*************/
